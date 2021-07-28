@@ -1,0 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<%@ page import="kr.ac.green.*"%>
+<%
+	Member member = (Member)session.getAttribute("member");
+	
+	if(member == null) {
+		session.setAttribute("msg", "잘못된 접근입니다.");
+%>
+		<%-- 출력버퍼 비우니까 이거 하고나면 아래코드는 실행을 안함 --%>
+		<jsp:forward page="loginForm.jsp"></jsp:forward>
+<%
+	}
+%>
